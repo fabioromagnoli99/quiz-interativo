@@ -1,4 +1,5 @@
 const form = document.querySelector('.quiz-form')
+const finalResult = document.querySelector('.result')
 
 const correctAnswers = ['B', 'B' ,'B', 'B']
 
@@ -17,5 +18,7 @@ form.addEventListener('submit', event => {
     if (userAnswer === correctAnswers[index])
     score += 25
   })
-  console.log(score)
+  
+  finalResult.querySelector('span').textContent = `${score}%`
+  finalResult.classList.remove('d-none')
 })
